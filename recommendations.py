@@ -165,7 +165,7 @@ def transform(df: pd.DataFrame, do_next: str, ap_filters: dict[str:str]):
         # Control over correct input
         while election12 not in ['Ascending', 'Descending']:
             print("Please, introduce a correct entry")
-            election12 = input("Choose:\n\t - Ascending \n\t - Descending")
+            election12 = input("Choose:\n\t - Ascending \n\t - Descending\n       >>> ")
         if election12 == 'Ascending':
             df.sort_values(by=[election1, 'Rate'],
                            ascending=[True, False], inplace=True)
@@ -205,8 +205,6 @@ if __name__ == "__main__":
     do_next = '2'
 
     df_0 = pd.read_csv('imdb.csv')
-
-    df = copy.deepcopy(df_0)
 
     while do_next != '3':
         if do_next == '1':
